@@ -8,11 +8,6 @@ import (
 )
 
 func DFS(graph, memo [][]int, row, col int) int {
-	// catch column index
-	if col < 0 || col >= len(graph[row]) {
-		return 0
-	}
-
 	if memo[row][col] != -1 {
 		return memo[row][col]
 	}
@@ -68,7 +63,7 @@ func readFile(filename string) (graph [][]int) {
 
 func main() {
 	// easy
-	graph := readFile("easy.json")
-	// graph := readFile("hard.json")
+	// graph := readFile("easy.json")
+	graph := readFile("hard.json")
 	Solve(graph)
 }
